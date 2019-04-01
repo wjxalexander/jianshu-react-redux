@@ -1,18 +1,7 @@
-const defaultState = {
-   focused: false,
-};
-// reducer's outPut is a pure fuction
-export default (state = defaultState, action) => {
-   if(action.type === "search_focus"){
-      return {
-         focused: true
-      }
-   }
-   if(action.type === "search_blur"){
-      return {
-         focused: false
-      }
-   }
-   return state;
-}
+import { combineReducers } from 'redux';
+import headReducer from '../common/header/store/reducer';
+
+export default combineReducers({
+   header: headReducer
+})
 
