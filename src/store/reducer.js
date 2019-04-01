@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
-import headReducer from '../common/header/store/reducer';
+import { reducer  as headReducer} from '../common/header/store';
 
+// combine fragment reducer
 export default combineReducers({
-   header: headReducer
+   header: headReducer // head 是个包裹器
 })
 

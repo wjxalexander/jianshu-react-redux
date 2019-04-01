@@ -58,7 +58,7 @@ const Header = props => {
 const mapStateToProps = state => {
   //state is the state in Store
   return {
-    focused: state.focused
+    focused: state.header.focused
   };
 };
 
