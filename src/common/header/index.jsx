@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   HeaderWrapper,
   Logo,
@@ -12,6 +12,8 @@ import {
 import { connect } from "react-redux"; // connect with Provider in App component
 import cls from "classnames";
 import { CSSTransition } from "react-transition-group";
+import  { actionCreators } from "./store";
+
 
 const Header = props => {
   return (
@@ -66,16 +68,10 @@ const mapDispatchToProps = dispatch => {
   //state is the state in Store
   return {
     handleInputFocus() {
-      const action = {
-        type: "search_focus"
-      };
-      dispatch(action);
+      dispatch(actionCreators.SearchFocus());// 需要括号
     },
     handleInputBlur() {
-      const action = {
-        type: "search_blur"
-      };
-      dispatch(action);
+        dispatch(actionCreators.SearchBlur());
     }
   };
 };

@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { reducer  as headReducer} from '../common/header/store';
+import { reducer as headReducer} from '../common/header/store';
 
 // combine fragment reducer
 export default combineReducers({
