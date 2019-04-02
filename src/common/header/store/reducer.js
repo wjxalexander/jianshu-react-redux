@@ -1,18 +1,15 @@
 import * as actionTypes from './actionTypes'
-const defaultState = {
+import { fromJS } from 'immutable';
+const defaultState = fromJS({
     focused: false,
- };
+ });
  // reducer's outPut is a pure fuction
  export default (state = defaultState, action) => {
     if(action.type === actionTypes.SEARCH_FOCUS){
-       return {
-          focused: true
-       }
+       return state.set('focused',true) 
     }
     if(action.type === actionTypes.SEARCH_BLUR){
-       return {
-          focused: false
-       }
+      return state.set('focused',false) 
     }
     return state;
  };
