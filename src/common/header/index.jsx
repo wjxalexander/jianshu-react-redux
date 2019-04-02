@@ -60,7 +60,9 @@ const Header = props => {
 const mapStateToProps = state => {
   //state is the state in Store
   return {
-    focused: state.header.get('focused')
+    focused: state.getIn(['header','focused'])
+    // equal state.get(header).get('focused')
+    // state 也是immutable 了
   };
 };
 
