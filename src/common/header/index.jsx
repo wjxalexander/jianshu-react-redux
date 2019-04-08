@@ -7,13 +7,41 @@ import {
   NavSearch,
   Addition,
   Button,
-  SearchWrapper
+  SearchWrapper,
+  SearchInfro,
+  SearchInfroTitle,
+  SearchInfroSwitch,
+  SearchInfroItem,
+  SearchInfroList
 } from "./style";
 import { connect } from "react-redux"; // connect with Provider in App component
 import cls from "classnames";
 import { CSSTransition } from "react-transition-group";
-import  { actionCreators } from "./store";
+import { actionCreators } from "./store";
 
+const getListArea = show => {
+  if (show) {
+    return (
+      <SearchInfro>
+        <SearchInfroTitle>
+          热门搜索
+          <SearchInfroSwitch>换一换</SearchInfroSwitch>
+        </SearchInfroTitle>
+        <SearchInfroList>
+          <SearchInfroItem>教育</SearchInfroItem>
+          <SearchInfroItem>教育</SearchInfroItem>
+          <SearchInfroItem>教育</SearchInfroItem>
+          <SearchInfroItem>教育</SearchInfroItem>
+          <SearchInfroItem>教育</SearchInfroItem>
+          <SearchInfroItem>教育</SearchInfroItem>
+          <SearchInfroItem>教育</SearchInfroItem>
+        </SearchInfroList>
+      </SearchInfro>
+    );
+  } else {
+    return null;
+  }
+};
 
 const Header = props => {
   return (
@@ -42,6 +70,7 @@ const Header = props => {
             <span className={cls("iconfont", props.focused ? "focused" : "")}>
               &#xe623;
             </span>
+            {getListArea(props.focused)}
           </SearchWrapper>
         </Nav>
         <Addition>
@@ -60,7 +89,7 @@ const Header = props => {
 const mapStateToProps = state => {
   //state is the state in Store
   return {
-    focused: state.getIn(['header','focused'])
+    focused: state.getIn(["header", "focused"])
     // equal state.get(header).get('focused')
     // state 也是immutable 了
   };
@@ -70,10 +99,10 @@ const mapDispatchToProps = dispatch => {
   //state is the state in Store
   return {
     handleInputFocus() {
-      dispatch(actionCreators.SearchFocus());// 需要括号
+      dispatch(actionCreators.SearchFocus()); // 需要括号
     },
     handleInputBlur() {
-        dispatch(actionCreators.SearchBlur());
+      dispatch(actionCreators.SearchBlur());
     }
   };
 };
