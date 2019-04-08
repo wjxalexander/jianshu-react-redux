@@ -2,6 +2,7 @@ import * as actionTypes from './actionTypes'
 import { fromJS } from 'immutable';
 const defaultState = fromJS({
     focused: false,
+    list:[]
  });
  // reducer's outPut is a pure fuction
  export default (state = defaultState, action) => {
