@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import {
   HeaderWrapper,
   Logo,
@@ -18,25 +18,50 @@ import { connect } from "react-redux"; // connect with Provider in App component
 import cls from "classnames";
 import { CSSTransition } from "react-transition-group";
 import { actionCreators } from "./store";
-
-
+import { toJS } from "immutable";
 class Header extends Component {
-  getListArea = show => {
-    if (show) {
+  getListArea = () => {
+    const {
+      list,
+      focused,
+      mouseIn,
+      page,
+      totalPage,
+      handleChangePage,
+      handleMouseEnter,
+      handleMouseLeave
+    } = this.props;
+    const newList = list.toJS()
+    if (focused || mouseIn) {
       return (
-        <SearchInfro>
+        <SearchInfro
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <SearchInfroTitle>
             热门搜索
-            <SearchInfroSwitch>换一换</SearchInfroSwitch>
+            <SearchInfroSwitch
+              onClick={() => handleChangePage(page, totalPage)}
+            >
+              换一换
+            </SearchInfroSwitch>
           </SearchInfroTitle>
           <SearchInfroList>
-            <SearchInfroItem>教育</SearchInfroItem>
-            <SearchInfroItem>教育</SearchInfroItem>
-            <SearchInfroItem>教育</SearchInfroItem>
-            <SearchInfroItem>教育</SearchInfroItem>
-            <SearchInfroItem>教育</SearchInfroItem>
-            <SearchInfroItem>教育</SearchInfroItem>
-            <SearchInfroItem>教育</SearchInfroItem>
+            {newList.length > 0
+              ? newList
+                  .slice(page, page + 10)
+                  .map((item, index) => {
+                    return (
+                      <Fragment>
+                        <SearchInfroItem
+                          key={`${item}-${index}-${Math.random()}`}
+                        >
+                          {item}
+                        </SearchInfroItem>
+                      </Fragment>
+                    );
+                  })
+              : ''}
           </SearchInfroList>
         </SearchInfro>
       );
@@ -45,6 +70,7 @@ class Header extends Component {
     }
   };
   render() {
+    const { focused, handleInputFocus, handleInputBlur } = this.props;
     return (
       <div>
         <HeaderWrapper>
@@ -58,20 +84,20 @@ class Header extends Component {
             </NavItem>
             <SearchWrapper>
               <CSSTransition
-                in={this.props.focused} // true of false 控制
+                in={focused} // true of false 控制
                 timeout={500}
                 classNames="slide"
               >
                 <NavSearch
-                  className={this.props.focused ? "focused" : ""}
-                  onFocus={this.props.handleInputFocus}
-                  onBlur={this.props.handleInputBlur}
+                  className={focused ? "focused" : ""}
+                  onFocus={handleInputFocus}
+                  onBlur={handleInputBlur}
                 />
               </CSSTransition>
-              <span className={cls("iconfont", this.props.focused ? "focused" : "")}>
+              <span className={cls("iconfont", focused ? "focused" : "")}>
                 &#xe623;
               </span>
-              {this.getListArea(this.props.focused)}
+              {this.getListArea()}
             </SearchWrapper>
           </Nav>
           <Addition>
@@ -91,7 +117,12 @@ class Header extends Component {
 const mapStateToprops = state => {
   //state is the state in Store
   return {
-    focused: state.getIn(["header", "focused"])
+    focused: state.getIn(["header", "focused"]),
+    list: state.getIn(["header", "list"]),
+    page: state.getIn(["header", "page"]),
+    totalPage: state.getIn(["header", "totalPage"]),
+
+    mouseIn: state.getIn(["header", "mouseIn"])
     // equal state.get(header).get('focused')
     // state 也是immutable 了
   };
@@ -101,10 +132,22 @@ const mapDispatchToprops = dispatch => {
   //state is the state in Store
   return {
     handleInputFocus() {
+      dispatch(actionCreators.getList());
       dispatch(actionCreators.SearchFocus()); // 需要括号
     },
     handleInputBlur() {
       dispatch(actionCreators.SearchBlur());
+    },
+    handleChangePage(page, totalPage) {
+      page < totalPage
+        ? dispatch(actionCreators.handleChangePage(page + 1))
+        : dispatch(actionCreators.handleChangePage(1));
+    },
+    handleMouseEnter() {
+      dispatch(actionCreators.mouseEnter());
+    },
+    handleMouseLeave() {
+      dispatch(actionCreators.mouseLeave());
     }
   };
 };
