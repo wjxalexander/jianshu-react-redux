@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { IconfontStyle } from "./assets/iconfont/iconfont";
 import Header from "./common/header";
 import Store from "./store";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends Component {
   render() {
@@ -14,6 +15,10 @@ class App extends Component {
           <GlobalStyle />
           <IconfontStyle />
           <Header />
+          <Router>
+            <Route exact path = '/' render = {()=><div>home</div>}></Route>
+            <Route path = '/detail' render = {()=><div>detail</div>}></Route>
+          </Router>
         </Provider>
       </div>
     );

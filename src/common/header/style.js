@@ -100,6 +100,14 @@ export const SearchInfroSwitch = styled.div`
   float: right;
   font-size: 13px;
   cursor: pointer;
+  .spin {
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 2px;
+    transition: all 200ms ease-in;
+    transform-origin: center center;
+  }
+
 `;
 export const SearchInfroList = styled.div`
   :after {
@@ -116,7 +124,7 @@ export const SearchInfroItem = styled.a`
   padding: 0 5px;
   margin: 0 10px 10px 0;
   border: 1px solid #ddd;
-  border-radius:3px;
+  border-radius: 3px;
   color: #787878;
   display: block;
   float: left;
@@ -146,7 +154,7 @@ export const Button = styled.div`
 export const SearchWrapper = styled.div`
   float: left;
   position: relative;
-  .iconfont {
+  .zoom {
     display: inline-block;
     position: absolute;
     right: 5px;

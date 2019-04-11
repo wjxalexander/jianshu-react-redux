@@ -18,7 +18,6 @@ import { connect } from "react-redux"; // connect with Provider in App component
 import cls from "classnames";
 import { CSSTransition } from "react-transition-group";
 import { actionCreators } from "./store";
-import { toJS } from "immutable";
 class Header extends Component {
   getListArea = () => {
     const {
@@ -31,7 +30,7 @@ class Header extends Component {
       handleMouseEnter,
       handleMouseLeave
     } = this.props;
-    const newList = list.toJS()
+    const newList = list.toJS();
     if (focused || mouseIn) {
       return (
         <SearchInfro
@@ -41,27 +40,27 @@ class Header extends Component {
           <SearchInfroTitle>
             热门搜索
             <SearchInfroSwitch
-              onClick={() => handleChangePage(page, totalPage)}
+              onClick={() => handleChangePage(page, totalPage, this.spinIcon)}
             >
+              <span
+                ref={icon => (this.spinIcon = icon)}
+                className={cls("iconfont", "spin", focused ? "focused" : "")}
+              >
+                &#xe7e5;
+              </span>
               换一换
             </SearchInfroSwitch>
           </SearchInfroTitle>
           <SearchInfroList>
             {newList.length > 0
-              ? newList
-                  .slice(page, page + 10)
-                  .map((item, index) => {
-                    return (
-                      <Fragment>
-                        <SearchInfroItem
-                          key={`${item}-${index}-${Math.random()}`}
-                        >
-                          {item}
-                        </SearchInfroItem>
-                      </Fragment>
-                    );
-                  })
-              : ''}
+              ? newList.slice(page, page + 10).map((item, index) => {
+                  return (
+                    <SearchInfroItem key={`${item}-${index}-${Math.random()}`}>
+                      {item}
+                    </SearchInfroItem>
+                  );
+                })
+              : ""}
           </SearchInfroList>
         </SearchInfro>
       );
@@ -70,7 +69,7 @@ class Header extends Component {
     }
   };
   render() {
-    const { focused, handleInputFocus, handleInputBlur } = this.props;
+    const { focused, handleInputFocus, handleInputBlur, list } = this.props;
     return (
       <div>
         <HeaderWrapper>
@@ -90,11 +89,13 @@ class Header extends Component {
               >
                 <NavSearch
                   className={focused ? "focused" : ""}
-                  onFocus={handleInputFocus}
+                  onFocus={() => handleInputFocus(list)}
                   onBlur={handleInputBlur}
                 />
               </CSSTransition>
-              <span className={cls("iconfont", focused ? "focused" : "")}>
+              <span
+                className={cls("iconfont", "zoom", focused ? "focused" : "")}
+              >
                 &#xe623;
               </span>
               {this.getListArea()}
@@ -121,7 +122,6 @@ const mapStateToprops = state => {
     list: state.getIn(["header", "list"]),
     page: state.getIn(["header", "page"]),
     totalPage: state.getIn(["header", "totalPage"]),
-
     mouseIn: state.getIn(["header", "mouseIn"])
     // equal state.get(header).get('focused')
     // state 也是immutable 了
@@ -131,14 +131,24 @@ const mapStateToprops = state => {
 const mapDispatchToprops = dispatch => {
   //state is the state in Store
   return {
-    handleInputFocus() {
-      dispatch(actionCreators.getList());
+    handleInputFocus(list) {
+      console.log(list);
+      list.size === 0 && dispatch(actionCreators.getList());
+
       dispatch(actionCreators.SearchFocus()); // 需要括号
     },
     handleInputBlur() {
       dispatch(actionCreators.SearchBlur());
     },
-    handleChangePage(page, totalPage) {
+    handleChangePage(page, totalPage, spin) {
+      // 获取dom节点 ref
+      let originAngle = spin.style.transform.replace(/[^0-9]/gi, "");
+      if (originAngle) {
+        originAngle = parseInt(originAngle);
+      } else {
+        originAngle = 0;
+      }
+      spin.style.transform = `rotate(${originAngle + 360}deg)`;
       page < totalPage
         ? dispatch(actionCreators.handleChangePage(page + 1))
         : dispatch(actionCreators.handleChangePage(1));

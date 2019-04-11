@@ -1,13 +1,15 @@
 import {createGlobalStyle} from "styled-components";
 export const IconfontStyle = createGlobalStyle`
 @font-face {font-family: "iconfont";
-  src: url('./iconfont.eot?t=1553780774338'); /* IE9 */
-  src: url('./iconfont.eot?t=1553780774338#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOAAAsAAAAAB4gAAAM0AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqCUIJGATYCJAMQCwoABCAFhG0HOxurBhHVm7HIfiTYtnFS1sFkH0IX6UzwQHm9bzKz2/zkU6ywW8qn9kTfhJN1gpAA2JxrwEZFqJHc+c0/+ULaAaZ5+uPe8R+dBzaffctlbVqT5ubuY4Dxti6wNRYGXMLYMHblRcyHAAzCSUXU1rfsiI7CaCYAMXzIoD7oKRWqJlGgI7CX9FWI1djQtSXaJWCV/3vxhmyhg4ZNYizUdmBdfyqfhz7Pl7Ot2XSXc5g9ngFgg0ACqYACMbjU1BcZelORGEplRT6go6PBWEUxz/MtCwn3ItfNvzzQEEgQdox4VwBykU/C81CbgAbPYwgIeJ4fhwR4IY11wAXoDWxAlNALaEiUj6uhpK77maMO3I25c8dx61bH27c7Lbtb49ulYmSaeveuk1PyjmmO3UsTO3Zy7pkzudMkx+R+Dg/D4drRGGZ26box3NgU2LnPMXMZGMI4bSy9IuY4nXP8NUo7Hd3J7F3msnNCnPqzJ2yQLjefu7ZWrpOuQdusxZywbau5lT9jf9inhm6dKrfs0+aaIVv2T9WmaJiPx99H+bzQli0WVS3q1fPUqV69Jlfl9004ddJF0o9LrumTPfnECU4PbLieWHt9gLsla+4MLW/TSavuO6T8rvpTPm78hcIMYatKH5XkGOLWw2xRWfy0p3P8xSC/P8Fxn+LCGQ2AdU6ekGWW0XS2Qs4By5Kn5W9ajk1jvet6eZR+000FwL2zn+L9pPaCdy1QBD+llMKyUFxkqJWSZdQqVXs7isz7aqUBBgZgQZs3T8ZQ+inxINDxi0GjGWEg0YlFFCUVbJjkgh2dCjBIoWGwiQ9jkQjlAiSzAIDAkwOg4c4pkHhyGVGUx2DDn3dgx1NIMHAInzFN4oU7FTWEglGD/MOkjt1YWi6CxBva9yooKfJpLyQ3OaAp62xgwB1pjA7uY1tmA4aODXqwGK7rAScdMyouR+azqypTdqNSHZtXeDWEglGD/MOkjt246bnIff+G9r0KqiFV2F9IbiofmrJugQzyvRXpWg5xH9syGzB0bNADA66m94CzvNaMisuxh/vsKpTKtJWX8yu3J5wBGJ6xhfIDP/QjP/bsDgWpMRyNe1AlPA8=') format('woff2'),
-  url('./iconfont.woff?t=1553780774338') format('woff'),
-  url('./iconfont.ttf?t=1553780774338') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url('./iconfont.svg?t=1553780774338#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('./iconfont.eot?t=1554988453550'); /* IE9 */
+  src: url('./iconfont.eot?t=1554988453550#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAQkAAsAAAAACGQAAAPWAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqEBINfATYCJAMUCwwABCAFhG0HRhtpB8gusG3YE0RgXVBAwW/AC7iQIsCWbbbcfeu42iToHo/C41EgFBJFlyhNFx6husX//+nUb11QTpGvRAFmSQWS5ZOtGJ98AZZTAJ6QNwA0lKfA1JEgAQIGCWz3u4YRV0qLOZY8Lv+HO/64d/zbmoXzWW2XMZfNyf8+Bhh33gU61qCNARdQotwiuzPIi1pPQN2UOXQH+aW1ECKzugWEE8UkQkjOLrdQg6qprBmbhSsIVI0XzFMAl+H3wx9EF0JUJNZGh5VnhMw7tq8Haf81i5obtOm8ECaRsAFkwmmt/wSKkxuQuva7ADtAXVUUP8f2Tu6N7+v5D+jqAxnr9h8eSZQFQskqb4Idksp8jnU5JD4nc4h8xnPIfPUon6W8APWJ0vfAP5VqcmvfJEpyszk5pLM5Vasjfaunu9bbw/n7BF9v1MfLeTy1Ph/v9ysvPevQIT63v4Zz6zxd3DXven+GfzkvvPJqHsc5/2SAFCYFF6/35wydn2EfoBcGv6KVP7luRi0nnHI3cY18k8QPYI/CalmLfv6CXePZAyPniVf06wHqof7ErnuucwuCO5wvlbt8HLSjX39Hp5tB2rsAjPOdbcXYQ6U5v6zM5s0M1li5FKtpzsG5zw5knnXoLS2ZB84KfMzOBjjeYbR/zdFr9P+wPzv7Y0s/uPFPZQpBD3debkPbke9lDjJEEvct68r8MeV7UMvYwy3o0Bmmy845dLaFaWaonM5/BtIfW1qyOmv10iU3bixd2pQVb5h+43oo4m83K0eMbrp2DW7KBa9m5L4i/f8bcnx16RUck21Q0v0Bv9Nd9F5iRATuhjtm8kq/xfqSzOTuJQJ9MmrYHz31TR0vEWB8uobS/ltdtYR0DjCGbqLfv5330N33lw5I/Rqiz+DDu+RIiILL/6GBpvjZjRLGQBZVlqPIqtKljCmGpBS2zBCM/FfULw73fZ4mOAKpN6iKCgxRxSQkVQtIJm5AoWETSlXbULeuYHLDgAoJuYY1KxEEXecganuEpOsZkomfoDDhC5S6Iag7iiFzNiylsDkqESkxYkMzViSHXXZclI0qq4mp3iqqWVVI54nqUiI4aqxipoDYiTrFAFeDKZpSGcuqw4bz0WbEanVgp+qoIxINN1PqTI6YVXelcMlhA9Y+FSGiCCPMoBmmkDjYyX5tii19vhphUs9KpLZgauI8QuWiNI9FCRcJQAr0dhDmVi5xaWASjaJkmEzlYIPlo1aElZUD5qxvVYeQUOHMA+JOySLsajJUH7680faO66DOGlyEGFLIoQil6plTsV/58LggFxFVyYycxM5kiQAAAA==') format('woff2'),
+  url('./iconfont.woff?t=1554988453550') format('woff'),
+  url('./iconfont.ttf?t=1554988453550') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('./iconfont.svg?t=1554988453550#iconfont') format('svg'); /* iOS 4.1- */
 }
+
+
 
 .iconfont {
   font-family: "iconfont" !important;
@@ -16,6 +18,23 @@ export const IconfontStyle = createGlobalStyle`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* 
+.iconspinner5:before {
+  content: "\e7e5";
+}
+
+.iconsearch:before {
+  content: "\e623";
+}
+
+.iconpen:before {
+  content: "\e61c";
+}
+
+.iconAa:before {
+  content: "\e636"; */
+}
+
 
 /* .iconsearch:before {
   content: "\e623";
