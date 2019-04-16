@@ -5,7 +5,8 @@ import { IconfontStyle } from "./assets/iconfont/iconfont";
 import Header from "./common/header";
 import Store from "./store";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
+import Home from "./pages/home";
+import Detail from "./pages/detail";
 class App extends Component {
   render() {
     return (
@@ -16,8 +17,8 @@ class App extends Component {
           <IconfontStyle />
           <Header />
           <Router>
-            <Route exact path = '/' render = {()=><div>home</div>}></Route>
-            <Route path = '/detail' render = {()=><div>detail</div>}></Route>
+            <Route exact path="/" component={Home} />
+            <Route path="/detail" component={Detail} />
           </Router>
         </Provider>
       </div>
