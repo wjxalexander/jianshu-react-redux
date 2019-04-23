@@ -11,7 +11,8 @@ class Topic extends Component {
             <TopicItem key={item.get('id')}>
               <img
               className = "topic-pic" 
-              src={item.get('imgURL')} />
+              src={item.get('imgURL')} 
+              alt=""/>
               {item.get("title")}
             </TopicItem>
           );

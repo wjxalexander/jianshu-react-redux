@@ -83,11 +83,13 @@ export const NavSearch = styled.input.attrs({
 `;
 export const SearchInfro = styled.div`
   position: absolute;
-  left: 0;
+  left: 20px;
   top: 56px;
   width: 240px;
   padding: 0 20px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  z-index:2;
+  background: white
 `;
 export const SearchInfroTitle = styled.div`
   margin-top: 20px;
@@ -168,4 +170,6 @@ export const SearchWrapper = styled.div`
       color: #fff;
     }
   }
+`;
+export const ListInfo = styled.div`
 `;

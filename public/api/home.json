@@ -1,0 +1,79 @@
+{
+    "sucess": true,
+    "data":{
+       "topicList":[
+        {
+          "id": 1,
+          "title": "社会热点",
+          "imgURL":
+            "http://edu-image.nosdn.127.net/f51451ce40744c6a9e1eeaefd32c86f1.png?imageView&quality=100"
+        },
+        {
+          "id": 2,
+          "title": "手绘",
+          "imgURL":
+            "http://edu-image.nosdn.127.net/bbcc00726ec44a7fa72cfd7592009960.png?imageView&quality=100"
+        }
+      ],
+      "articleList": [
+        {
+          "id": 1,
+          "title": "异性相处，没有这五样东西，早晚会“散伙",
+          "description":
+            "爱情就像一道菜，想要让它更加美味，就要多加一点佐料。两性交往的时候，要付出真心，要把对方放在心上，而不是过一天算一天。 男人与女人的心里想法是不...",
+          "imgURL":
+            "https://upload-images.jianshu.io/upload_images/16235793-0d3fb016c6801566.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+        },
+        {
+          "id": 2,
+          "title": "Java进阶面试题：zookeeper 都有哪些使用场景？",
+          "description":
+            "面试原题 zookeeper 都有哪些使用场景？ 面试官心理分析 现在聊的 topic 是分布式系统，面试官跟你聊完了 dubbo 相关的一些问... 男人与女人的心里想法是不...",
+          "imgURL":
+            "https://upload-images.jianshu.io/upload_images/16235793-0d3fb016c6801566.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+        },
+        {
+          "id": 3,
+          "title": "男人为啥喜欢腿长的女人",
+          "description":
+            "男人们之所以喜欢大长腿的女人，就是因为苗条性感，让人看起来更婀娜多姿。 男人那刚毅的棱角分明的，用短粗线条勾勒出来的雄性们，当然更喜欢欣赏女人们...",
+          "imgURL":
+            "https://upload-images.jianshu.io/upload_images/16535373-318a5c2a084087ac.png?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+        },
+        {
+          "id": 4,
+          "title": "男人为啥喜欢腿长的女人",
+          "description":
+            "爱情就像一道菜，想要让它更加美味，就要多加一点佐料。两性交往的时候，要付出真心，要把对方放在心上，而不是过一天算一天。 男人与女人的心里想法是不...",
+          "imgURL":
+            "https://upload-images.jianshu.io/upload_images/16535373-318a5c2a084087ac.png?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+        },
+        {
+          "id": 5,
+          "title": "6位女星穿古装一字肩，张嘉倪惊艳，最服的还是赵丽颖",
+          "description":
+            " 古装剧中造型特别多，那我们就来看看穿一字肩的古装女星吧。 范冰冰几乎是把古装的一字肩穿了个遍，她很多古装都是一字肩的，不过这个看上去也挺好看的...",
+          "imgURL":
+            "https://upload-images.jianshu.io/upload_images/13916504-4341f4e2df7ac66d.png?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
+        }
+      ],
+      "recommendList": [
+        {
+          "id": 1,
+          "imgURL": "/assets/1.png"
+        },
+        {
+          "id": 2,
+          "imgURL": "/assets/2.png"
+        },
+        {
+          "id": 3,
+          "imgURL": "/assets/3.png"
+        },
+        {
+          "id": 4,
+          "imgURL": "/assets/4.png"
+        }
+      ]
+    }
+}

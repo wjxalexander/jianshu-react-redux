@@ -1,8 +1,13 @@
 import React, { Component, Fragment } from "react";
 import { HomeWarpper, HomeLeft, HomeRight } from "./style.js";
 import { List, Recommend, Topic, ç } from "./components";
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+import { actionCreators } from "./store";
 class Home extends Component {
+  componentDidMount(){
+    console.log('home',this.props)
+    this.props.getHomeLists()
+  }
   render() {
     return (
       <HomeWarpper className="clearfix">
@@ -24,5 +29,13 @@ class Home extends Component {
   }
 }
 
+const mapStateToProps = null;
+const mapDispatchToProps = (dispatch)=>{
+   return({
+     getHomeLists(){
+      dispatch(actionCreators.getList());
+     }
+   })
+} 
 
-export default Home;
+export default connect(mapStateToProps,mapDispatchToProps)(Home);
